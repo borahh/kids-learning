@@ -535,7 +535,7 @@
             </div>
             <div class="bento__carousel-container">
               <!-- Carousel Here: Use Lightwiegh Vanilla Js plugin please no Jquery -->
-              <div class="swiper bento__swiper">
+              <div class="bento__swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="p-4 bg-[#ffffff] flex flex-col gap-4 rounded-3xl">
@@ -1275,13 +1275,25 @@
     });
     const bentoSwiper = new Swiper('.bento__swiper', {
       loop: true,
-      slidesPerView: 1.5,
-      spaceBetween: 20,
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 1.5,
+          spaceBetween: 20,
+        },
+      },
     });
     const catSwiper = new Swiper('.cat__swiper', {
       loop: true,
-      slidesPerView: 4.1,
       centeredSlides: true,
+      slidesPerView: 4.1,
       spaceBetween: 10,
     });
   </script>
